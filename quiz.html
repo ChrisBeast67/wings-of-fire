@@ -26,10 +26,10 @@
 <section style="padding-top:120px;">
   <div class="wrap">
     <h1 class="section-title">The <span>Dragon Quiz</span></h1>
-    <p class="section-sub">14 questions. One score. Bragging rights.</p>
+    <p class="section-sub">16 questions. One score. Bragging rights.</p>
 
     <div class="quiz-box" id="quiz">
-      <div class="quiz-progress" id="progress">Question 1 of 14</div>
+      <div class="quiz-progress" id="progress">Question 1 of 16</div>
       <div class="quiz-q" id="qText">Loading…</div>
       <div class="quiz-opts" id="opts"></div>
       <div id="after" style="display:none;">
@@ -40,7 +40,7 @@
 
     <div class="quiz-box" id="result" style="display:none;">
       <div class="quiz-score">
-        <div class="big" id="scoreBig">0/14</div>
+        <div class="big" id="scoreBig">0/16</div>
         <h2 id="scoreTitle">Dragonlet</h2>
         <p style="color:var(--muted); margin-top:12px;" id="scoreMsg"></p>
         <button class="btn" id="restartBtn" style="margin-top:20px;">Try Again</button>
@@ -61,10 +61,10 @@ const QUIZ = [
    e:"Clay is a MudWing — big, strong, and the biggest of the five dragonets."},
   {q:"What is the name of the prophecy at the heart of Arc 1?",
    a:["The Jade Mountain Prophecy","The Dragonet Prophecy","The Lost Continent Prophecy","The Sky Prophecy"], c:1,
-   e:"The Dragonet Prophecy: the dragonets will unite the tribes — and one of them will destroy the world."},
-  {q:"Which dragonet is secretly terrible at flying?",
-   a:["Starflight","Sunny","Glory","Clay"], c:1,
-   e:"Sunny is a SandWing–NightWing hybrid with tiny wings. She's the fiercest fighter in the group but she can't fly."},
+   e:"The Dragonet Prophecy: five dragonets will hatch on the brightest night to unite the tribes and end the fight — 'Darkness will rise to bring the light.'"},
+  {q:"MudWings hatched from blood-red eggs have a special talent — what is it?",
+   a:["They are immune to fire","They can breathe underwater","They can read minds","They can grow extra wings"], c:0,
+   e:"Blood-red eggs hatch into fireproof MudWings. Clay is one of them, which is why Peril's heat couldn't hurt him and why he could shield Starflight from the volcano's lava."},
   {q:"Which tribe rules the Kingdom of the Sea?",
    a:["SeaWings","IceWings","RainWings","LeafWings"], c:0,
    e:"The SeaWings, with their fishhook claws, glowing stripes and the Deep Palace in the Bay of a Thousand Scales."},
@@ -88,24 +88,30 @@ const QUIZ = [
    e:"There is no FireWing tribe. Pyrrhia has seven tribes, Pantala has four, and the WildWings live on the Dungeon Isle."},
   {q:"Where do LeafWings live, and what is their special gift?",
    a:["The LeafSilk Kingdom in Pantala, and leafspeak","The Sky Kingdom, and flight","The Ice Kingdom, and frost","The Mud Kingdom, and strength"], c:0,
-   e:"LeafWings are gardeners who can speak to plants. They fled Pyrrhia to Pantala after being framed for Queen Falcon's murder."},
-  {q:"Which queen controls the HiveWings with the Othermind?",
+   e:"LeafWings are gardeners who can speak to plants. Queen Summit banished them from Pyrrhia, and they settled in Pantala, in the LeafSilk Kingdom and the wild Poison Jungle."},
+  {q:"Which queen used the Othermind plant to control the HiveWings?",
    a:["Queen Wasp","Queen Coral","Queen Thorn","Queen Ruby"], c:0,
-   e:"Queen Wasp — the mind control comes from the Othermind plant, and Cricket's immunity to it is the whole point of The Hive Queen."},
+   e:"Queen Wasp — the mind control came from the sentient Othermind plant, and Cricket's immunity to it is the whole point of The Hive Queen. The HiveWings are ruled by Queen Jewel today."},
   {q:"What is the Eye of Onyx?",
    a:["A legendary artifact that helped end the SandWing war","A NightWing mind-reading stone","A silk tool from Pantala","A volcano on Pyrrhia"], c:0,
    e:"The Eye of Onyx was the prize of the SandWing succession war. In The Brightest Night, Sunny gives it to Thorn, who becomes queen."},
   {q:"Where does the newest arc, The Forgotten Isles Prophecy, take place?",
    a:["The Dungeon Isle and the Court of Refuge","The Sea Kingdom","The Sky Kingdom","Jade Mountain Academy"], c:0,
-   e:"Umber and Sora flee Jade Mountain and end up on the Dungeon Isle, home of the WildWings and the twenty-five SharpWing sentinels."}
+   e:"Umber and Sora flee Jade Mountain and end up on the Dungeon Isle, home of the WildWings and the twenty-five SharpWing sentinels."},
+  {q:"Who is the protagonist of the first book of Arc 4, The Hybrid Prince?",
+   a:["Clay","Umber","Blue","Cricket"], c:1,
+   e:"Umber is Clay's younger brother — a MudWing who has spent his whole life in his famous sibling's shadow, and isn't sure he is a hero at all."},
+  {q:"How many metal SharpWings guard the Court of Refuge?",
+   a:["Twenty-five","Five","One hundred","Twelve"], c:0,
+   e:"Twenty-five SharpWings, enchanted by the animus dragon Precipice, guard the Dungeon Isle and record the name of every prisoner who enters."}
 ];
 
 const RANKS = [
-  [14,"Legend of the Sky","Perfect score. You know Pyrrhia better than most dragons living there. Tui Sutherland would be impressed. (And slightly worried.)"],
-  [11,"True Dragonet","Excellent! You clearly read every book — or read the wiki very thoroughly. Either way, respect."],
-  [8,"Jade Mountain Student","Solid. You know your tribes and your dragons. A few more books and you'll be unstoppable."],
+  [16,"Legend of the Sky","Perfect score. You know Pyrrhia better than most dragons living there. Tui Sutherland would be impressed. (And slightly worried.)"],
+  [13,"True Dragonet","Excellent! You clearly read every book — or read the wiki very thoroughly. Either way, respect."],
+  [9,"Jade Mountain Student","Solid. You know your tribes and your dragons. A few more books and you'll be unstoppable."],
   [5,"Curious Hatchling","Not bad for a beginner! Read a couple more and come back — the quiz will wait."],
-  [0,"Combe Hatchling","The prophecy says one dragonet will save the world. It's not you yet. Go read Arc 1!"
+  [0,"Combe Hatchling","The prophecy says five dragonets will be born to end the fight. You're not one of them yet. Go read Arc 1!"
 ];
 
 let idx = 0, score = 0, answered = false;

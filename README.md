@@ -7,7 +7,7 @@ A fan website about Tui T. Sutherland's **Wings of Fire** series, built by Percy
 - `books.html` — Every book in reading order: 16 main books, 2 Legends, 5 Winglets, companion books
 - `dragons.html` — All 12 known dragon tribes + the Dungeon Isle and Court of Refuge, and the world of Pyrrhia/Pantala
 - `characters.html` — Dragonets, Arc 2 & 3 characters, queens, villains, and Winglet/Legend characters
-- `quiz.html` — 14-question interactive quiz with scoring and rank titles
+- `quiz.html` — 16-question interactive quiz with scoring and rank titles
 
 ## Tech
 Pure static HTML / CSS / vanilla JS. No build step, no dependencies. Open `index.html` in a browser and it works.
