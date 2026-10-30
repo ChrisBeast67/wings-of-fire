@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz — Wings of Fire</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <div class="logo">⚡ <span>Wings</span> of Fire</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="books.html">Books</a>
+      <a href="dragons.html">Dragons</a>
+      <a href="characters.html">Characters</a>
+      <a href="quiz.html" class="active">Quiz</a>
+    </div>
+  </div>
+</nav>
+
+<section style="padding-top:120px;">
+  <div class="wrap">
+    <h1 class="section-title">The <span>Dragon Quiz</span></h1>
+    <p class="section-sub">10 questions. One score. Bragging rights.</p>
+
+    <div class="quiz-box" id="quiz">
+      <div class="quiz-progress" id="progress">Question 1 of 10</div>
+      <div class="quiz-q" id="qText">Loading…</div>
+      <div class="quiz-opts" id="opts"></div>
+      <div id="after" style="display:none;">
+        <p style="color:var(--muted); margin-top:14px;" id="explain"></p>
+        <button class="btn solid" id="nextBtn" style="margin-top:16px;">Next Question →</button>
+      </div>
+    </div>
+
+    <div class="quiz-box" id="result" style="display:none;">
+      <div class="quiz-score">
+        <div class="big" id="scoreBig">0/10</div>
+        <h2 id="scoreTitle">Dragonlet</h2>
+        <p style="color:var(--muted); margin-top:12px;" id="scoreMsg"></p>
+        <button class="btn" id="restartBtn" style="margin-top:20px;">Try Again</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="flame">🔥 ⚡ 🔥</div>
+  <p>Built by Percy ⚡ for The Beast — an unofficial fan site. Wings of Fire is written by Tui T. Sutherland and published by Scholastic.</p>
+</footer>
+
+<script>
+const QUIZ = [
+  {q:"Which tribe does Clay belong to?",
+   a:["SandWing","MudWing","SkyWing","NightWing"], c:1,
+   e:"Clay is a MudWing — big, strong, and the biggest of the five dragonets."},
+  {q:"What is the name of the prophecy at the heart of Arc 1?",
+   a:["The Jade Mountain Prophecy","The Dragonet Prophecy","The Lost Continent Prophecy","The Sky Prophecy"], c:1,
+   e:"The Dragonet Prophecy: the dragonets will unite the tribes — and one of them will destroy the world."},
+  {q:"Which dragonet is secretly terrible at flying?",
+   a:["Starflight","Sunny","Glory","Clay"], c:1,
+   e:"Sunny is a SandWing with tiny wings. She's the fiercest fighter but she can't fly."},
+  {q:"Which tribe rules the Coral Kingdom?",
+   a:["SeaWings","IceWings","RainWings","LeafWings"], c:0,
+   e:"The SeaWings, with their shimmering scales and their very shiny palace."},
+  {q:"How did Darkstalker finally get defeated?",
+   a:["In a battle with Starflight","By eating an enchanted strawberry","By being sealed under a volcano","By the NightWing queen"], c:1,
+   e:"He ate a poisoned strawberry and turned into a baby dragon. It is the funniest ending in the entire series."},
+  {q:"Which tribe can breathe underwater and live in the Marsh of Perpetual Drizzle?",
+   a:["MudWings","SeaWings","HiveWings","RainWings"], c:0,
+   e:"MudWings — the marsh is their home, and they're enormous and warm and muddy."},
+  {q:"Where does Arc 3 take place?",
+   a:["The Ice Kingdom","Pantala","The Court of Refuge","The Leafscape"], c:1,
+   e:"Pantala, the insect continent of HiveWings, silk and one very controlling queen."},
+  {q:"What power do NightWing queens have?",
+   a:["Mind-reading","Fire-breathing","Turning invisible","Controlling plants"], c:0,
+   e:"NightWing queens can 'see' inside other dragons' minds. It's how Marva and Claribel rule."},
+  {q:"What is Dragonet's true identity?",
+   a:["A boy","The lost sixth dragonet raised in the Combe","Queen Asteria","A human"], c:1,
+   e:"Dragonet is the sixth dragonet — the one the prophecy never mentioned. Nobody knows what she looks like."},
+  {q:"Which tribe lives in the Volcanoes of Sunrise and is immune to fire?",
+   a:["FireWings","SandWings","IceWings","SkyWings"], c:0,
+   e:"FireWings — big, loud and literally on fire. They live in volcanoes and fear nothing."}
+];
+
+const RANKS = [
+  [10,"Legend of the Sky","Perfect score. You know Pyrrhia better than most dragons living there. Tui Sutherland would be impressed. (And slightly worried.)"],
+  [8,"True Dragonet","Excellent! You clearly read every book — or read the wiki very thoroughly. Either way, respect."],
+  [6,"Jade Mountain Student","Solid. You know your tribes and your dragons. A few more books and you'll be unstoppable."],
+  [4,"Curious Hatchling","Not bad for a beginner! Read a couple more and come back — the quiz will wait."],
+  [0,"Combe Hatchling","The prophecy says one dragonet will save the world. It's not you yet. Go read Arc 1!"
+];
+
+let idx = 0, score = 0, answered = false;
+
+function render(){
+  const item = QUIZ[idx];
+  document.getElementById('progress').textContent = `Question ${idx+1} of ${QUIZ.length}`;
+  document.getElementById('qText').textContent = item.q;
+  document.getElementById('after').style.display = 'none';
+  const opts = document.getElementById('opts');
+  opts.innerHTML = '';
+  answered = false;
+  item.a.forEach((text, i) => {
+    const b = document.createElement('button');
+    b.textContent = text;
+    b.addEventListener('click', () => choose(b, i, item));
+    opts.appendChild(b);
+  });
+}
+
+function choose(btn, i, item){
+  if (answered) return;
+  answered = true;
+  const all = document.querySelectorAll('#opts button');
+  all.forEach((b, bi) => {
+    if (bi === item.c) b.classList.add('correct');
+    else if (bi === i) b.classList.add('wrong');
+    b.disabled = true;
+  });
+  if (i === item.c) score++;
+  document.getElementById('explain').textContent = item.e;
+  document.getElementById('after').style.display = 'block';
+}
+
+document.getElementById('nextBtn').addEventListener('click', () => {
+  idx++;
+  if (idx < QUIZ.length) render();
+  else showResult();
+});
+
+function showResult(){
+  document.getElementById('quiz').style.display = 'none';
+  const r = document.getElementById('result');
+  r.style.display = 'block';
+  document.getElementById('scoreBig').textContent = score + '/' + QUIZ.length;
+  let title='Combe Hatchling', msg='';
+  for (const [min,t,m] of RANKS){ if (score >= min){ title=t; msg=m; break; } }
+  document.getElementById('scoreTitle').textContent = title;
+  document.getElementById('scoreMsg').textContent = msg;
+  r.scrollIntoView({behavior:'smooth',block:'center'});
+}
+
+document.getElementById('restartBtn').addEventListener('click', () => {
+  idx = 0; score = 0;
+  document.getElementById('result').style.display = 'none';
+  document.getElementById('quiz').style.display = 'block';
+  render();
+});
+
+render();
+</script>
+</body>
+</html>
