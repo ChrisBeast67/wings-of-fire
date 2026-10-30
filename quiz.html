@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Quiz — Wings of Fire</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -23,10 +26,10 @@
 <section style="padding-top:120px;">
   <div class="wrap">
     <h1 class="section-title">The <span>Dragon Quiz</span></h1>
-    <p class="section-sub">10 questions. One score. Bragging rights.</p>
+    <p class="section-sub">14 questions. One score. Bragging rights.</p>
 
     <div class="quiz-box" id="quiz">
-      <div class="quiz-progress" id="progress">Question 1 of 10</div>
+      <div class="quiz-progress" id="progress">Question 1 of 14</div>
       <div class="quiz-q" id="qText">Loading…</div>
       <div class="quiz-opts" id="opts"></div>
       <div id="after" style="display:none;">
@@ -37,7 +40,7 @@
 
     <div class="quiz-box" id="result" style="display:none;">
       <div class="quiz-score">
-        <div class="big" id="scoreBig">0/10</div>
+        <div class="big" id="scoreBig">0/14</div>
         <h2 id="scoreTitle">Dragonlet</h2>
         <p style="color:var(--muted); margin-top:12px;" id="scoreMsg"></p>
         <button class="btn" id="restartBtn" style="margin-top:20px;">Try Again</button>
@@ -61,35 +64,47 @@ const QUIZ = [
    e:"The Dragonet Prophecy: the dragonets will unite the tribes — and one of them will destroy the world."},
   {q:"Which dragonet is secretly terrible at flying?",
    a:["Starflight","Sunny","Glory","Clay"], c:1,
-   e:"Sunny is a SandWing with tiny wings. She's the fiercest fighter but she can't fly."},
-  {q:"Which tribe rules the Coral Kingdom?",
+   e:"Sunny is a SandWing–NightWing hybrid with tiny wings. She's the fiercest fighter in the group but she can't fly."},
+  {q:"Which tribe rules the Kingdom of the Sea?",
    a:["SeaWings","IceWings","RainWings","LeafWings"], c:0,
-   e:"The SeaWings, with their shimmering scales and their very shiny palace."},
+   e:"The SeaWings, with their fishhook claws, glowing stripes and the Deep Palace in the Bay of a Thousand Scales."},
   {q:"How did Darkstalker finally get defeated?",
    a:["In a battle with Starflight","By eating an enchanted strawberry","By being sealed under a volcano","By the NightWing queen"], c:1,
-   e:"He ate a poisoned strawberry and turned into a baby dragon. It is the funniest ending in the entire series."},
-  {q:"Which tribe can breathe underwater and live in the Marsh of Perpetual Drizzle?",
+   e:"He spitefully ate an enchanted strawberry, which stripped his memories, his powers and his size. He is now Peacemaker, and it is the funniest ending in the entire series."},
+  {q:"Which tribe lives in the Mud Kingdom and can hold its breath for an hour?",
    a:["MudWings","SeaWings","HiveWings","RainWings"], c:0,
-   e:"MudWings — the marsh is their home, and they're enormous and warm and muddy."},
+   e:"MudWings — enormous, warm and muddy. MudWings hatched from blood-red eggs (like Clay) are even immune to fire."},
   {q:"Where does Arc 3 take place?",
-   a:["The Ice Kingdom","Pantala","The Court of Refuge","The Leafscape"], c:1,
-   e:"Pantala, the insect continent of HiveWings, silk and one very controlling queen."},
-  {q:"What power do NightWing queens have?",
-   a:["Mind-reading","Fire-breathing","Turning invisible","Controlling plants"], c:0,
-   e:"NightWing queens can 'see' inside other dragons' minds. It's how Marva and Claribel rule."},
-  {q:"What is Dragonet's true identity?",
-   a:["A boy","The lost sixth dragonet raised in the Combe","Queen Asteria","A human"], c:1,
-   e:"Dragonet is the sixth dragonet — the one the prophecy never mentioned. Nobody knows what she looks like."},
-  {q:"Which tribe lives in the Volcanoes of Sunrise and is immune to fire?",
-   a:["FireWings","SandWings","IceWings","SkyWings"], c:0,
-   e:"FireWings — big, loud and literally on fire. They live in volcanoes and fear nothing."}
+   a:["The Ice Kingdom","Pantala","The Court of Refuge","The Lost City of Night"], c:1,
+   e:"Pantala, the continent of silk, leaf and HiveWings — and one very controlling queen."},
+  {q:"What powers do NightWings hatched under a full moon have?",
+   a:["Mind-reading and prophecy","Fire-breathing","Turning invisible","Controlling plants"], c:0,
+   e:"A NightWing hatched under one full moon can read minds or see the future; under two full moons, both. Moonwatcher hatched under two."},
+  {q:"Which of these is NOT one of the five dragonets of destiny?",
+   a:["Tsunami","Glory","Scarlet","Starflight"], c:2,
+   e:"The five are Clay, Tsunami, Glory, Starflight and Sunny. Scarlet was the SkyWing queen."},
+  {q:"Which tribe is NOT a real dragon tribe in the books?",
+   a:["SilkWings","LeafWings","FireWings","WildWings"], c:2,
+   e:"There is no FireWing tribe. Pyrrhia has seven tribes, Pantala has four, and the WildWings live on the Dungeon Isle."},
+  {q:"Where do LeafWings live, and what is their special gift?",
+   a:["The LeafSilk Kingdom in Pantala, and leafspeak","The Sky Kingdom, and flight","The Ice Kingdom, and frost","The Mud Kingdom, and strength"], c:0,
+   e:"LeafWings are gardeners who can speak to plants. They fled Pyrrhia to Pantala after being framed for Queen Falcon's murder."},
+  {q:"Which queen controls the HiveWings with the Othermind?",
+   a:["Queen Wasp","Queen Coral","Queen Thorn","Queen Ruby"], c:0,
+   e:"Queen Wasp — the mind control comes from the Othermind plant, and Cricket's immunity to it is the whole point of The Hive Queen."},
+  {q:"What is the Eye of Onyx?",
+   a:["A legendary artifact that helped end the SandWing war","A NightWing mind-reading stone","A silk tool from Pantala","A volcano on Pyrrhia"], c:0,
+   e:"The Eye of Onyx was the prize of the SandWing succession war. In The Brightest Night, Sunny gives it to Thorn, who becomes queen."},
+  {q:"Where does the newest arc, The Forgotten Isles Prophecy, take place?",
+   a:["The Dungeon Isle and the Court of Refuge","The Sea Kingdom","The Sky Kingdom","Jade Mountain Academy"], c:0,
+   e:"Umber and Sora flee Jade Mountain and end up on the Dungeon Isle, home of the WildWings and the twenty-five SharpWing sentinels."}
 ];
 
 const RANKS = [
-  [10,"Legend of the Sky","Perfect score. You know Pyrrhia better than most dragons living there. Tui Sutherland would be impressed. (And slightly worried.)"],
-  [8,"True Dragonet","Excellent! You clearly read every book — or read the wiki very thoroughly. Either way, respect."],
-  [6,"Jade Mountain Student","Solid. You know your tribes and your dragons. A few more books and you'll be unstoppable."],
-  [4,"Curious Hatchling","Not bad for a beginner! Read a couple more and come back — the quiz will wait."],
+  [14,"Legend of the Sky","Perfect score. You know Pyrrhia better than most dragons living there. Tui Sutherland would be impressed. (And slightly worried.)"],
+  [11,"True Dragonet","Excellent! You clearly read every book — or read the wiki very thoroughly. Either way, respect."],
+  [8,"Jade Mountain Student","Solid. You know your tribes and your dragons. A few more books and you'll be unstoppable."],
+  [5,"Curious Hatchling","Not bad for a beginner! Read a couple more and come back — the quiz will wait."],
   [0,"Combe Hatchling","The prophecy says one dragonet will save the world. It's not you yet. Go read Arc 1!"
 ];
 

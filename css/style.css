@@ -19,7 +19,7 @@
 html { scroll-behavior: smooth; }
 
 body {
-  font-family: 'Trebuchet MS', 'Segoe UI', system-ui, sans-serif;
+  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
   background:
     radial-gradient(1200px 600px at 80% -10%, rgba(255, 107, 26, 0.22), transparent 60%),
     radial-gradient(900px 500px at 0% 10%, rgba(77, 208, 255, 0.12), transparent 55%),
@@ -30,7 +30,10 @@ body {
   overflow-x: hidden;
 }
 
-h1, h2, h3, h4 { font-family: 'Georgia', 'Times New Roman', serif; line-height: 1.15; letter-spacing: 0.5px; }
+h1, h2, h3, h4 {
+  font-family: 'Cinzel', 'Georgia', 'Times New Roman', serif;
+  font-weight: 700; line-height: 1.15; letter-spacing: 0.5px;
+}
 
 a { color: var(--gold); text-decoration: none; }
 a:hover { color: var(--ember); }
@@ -49,7 +52,7 @@ nav {
   display: flex; align-items: center; gap: 22px; height: 64px;
 }
 .logo {
-  font-family: 'Georgia', serif; font-size: 1.25rem; font-weight: 700;
+  font-family: 'Cinzel', Georgia, serif; font-size: 1.15rem; font-weight: 800;
   color: var(--gold); white-space: nowrap;
 }
 .logo span { color: var(--ember); }
@@ -136,7 +139,7 @@ section { padding: 70px 0; }
 /* ARC CARDS */
 .arc-card { position: relative; overflow: hidden; }
 .arc-card .arc-no {
-  font-family: 'Georgia', serif; font-size: 3rem; font-weight: 700;
+  font-family: 'Cinzel', Georgia, serif; font-size: 3rem; font-weight: 800;
   color: rgba(255,194,71,.15); position: absolute; top: 6px; right: 16px;
 }
 .arc-card h3 { color: var(--gold); margin-bottom: 6px; }
@@ -149,7 +152,7 @@ section { padding: 70px 0; }
 .book-num {
   flex: 0 0 46px; height: 46px; border-radius: 12px;
   background: linear-gradient(135deg, var(--ember), var(--ember-dark));
-  display: grid; place-items: center; font-weight: 700; font-family: 'Georgia', serif;
+  display: grid; place-items: center; font-weight: 700; font-family: 'Cinzel', Georgia, serif;
   font-size: 1.15rem; color: #fff;
 }
 .book-card h3 { font-size: 1.2rem; color: var(--gold); }
@@ -182,7 +185,7 @@ section { padding: 70px 0; }
   background: linear-gradient(180deg, var(--ash-2), var(--ash-3));
   border: 1px solid rgba(255,194,71,.25); border-radius: 18px; padding: 30px; max-width: 720px; margin: 0 auto;
 }
-.quiz-q { font-family: 'Georgia', serif; font-size: 1.4rem; margin-bottom: 20px; color: var(--gold); }
+.quiz-q { font-family: 'Cinzel', Georgia, serif; font-size: 1.4rem; margin-bottom: 20px; color: var(--gold); }
 .quiz-opts { display: grid; gap: 10px; }
 .quiz-opts button {
   text-align: left; padding: 14px 18px; border-radius: 12px; font-size: 1rem;
@@ -194,7 +197,7 @@ section { padding: 70px 0; }
 .quiz-opts button.wrong { background: rgba(255,80,80,.2); border-color: #ff5050; }
 .quiz-progress { font-size: .85rem; color: var(--muted); margin-bottom: 12px; letter-spacing: 1px; text-transform: uppercase; }
 .quiz-score { text-align: center; padding: 26px 0; }
-.quiz-score .big { font-size: 3.4rem; font-family: 'Georgia', serif; color: var(--ember); }
+.quiz-score .big { font-size: 3.4rem; font-family: 'Cinzel', Georgia, serif; color: var(--ember); }
 
 /* TRIBES PICKER */
 .picker { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
