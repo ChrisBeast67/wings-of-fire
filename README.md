@@ -8,6 +8,7 @@ A fan website about Tui T. Sutherland's **Wings of Fire** series, built by Percy
 - `dragons.html` — All 12 known dragon tribes + the Dungeon Isle and Court of Refuge, the world of Pyrrhia/Pantala, and "Why the tribes matter"
 - `characters.html` — Dragonets, Arc 2/3/4 characters, queens, villains, Winglet/Legend characters, and "Why these characters work"
 - `quiz.html` — 16-question interactive quiz with scoring and rank titles
+- `tribe-quiz.html` — "Which tribe are you?" personality quiz (11 questions, 11 tribes), plus a sneak peek of Arc 4
 
 ## Tech
 Pure static HTML / CSS / vanilla JS. No build step, no dependencies. Open `index.html` in a browser and it works.
@@ -16,12 +17,13 @@ Pure static HTML / CSS / vanilla JS. No build step, no dependencies. Open `index
 ```
 css/style.css    — shared styles (dark ash + ember/gold theme)
 js/main.js       — scroll-reveal effect (shared across pages)
-js/quiz.js       — quiz data + logic (external + cache-busted, so a stale inline
-                   script can never wedge the quiz on a cached page)
+js/quiz.js       — lore quiz data + logic (external + cache-busted, so a stale
+                   inline script can never wedge the quiz on a cached page)
+js/tribequiz.js  — tribe quiz data + logic (also external + cache-busted)
 ```
 
-`quiz.html` also ships a `<noscript>` fallback and a 2.5-second watchdog that swaps the
-"Loading…" state for a hard-refresh instruction if the quiz script fails to load.
+Both quiz pages ship a `<noscript>` fallback and a 2.5-second watchdog that swaps the
+"Loading…" state for a hard-refresh instruction if the script fails to load.
 
 ## Local preview
 ```bash

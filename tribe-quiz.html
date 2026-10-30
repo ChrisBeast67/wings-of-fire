@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Which Tribe Are You? — Wings of Fire</title>
+<meta name="description" content="Take the Wings of Fire tribe quiz and find out whether you're a SeaWing, MudWing, SandWing, SkyWing, NightWing, IceWing, RainWing, LeafWing, SilkWing, HiveWing or WildWing. Plus a sneak peek of the newest arc.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wg4,500,600,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=2">
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <div class="logo">⚡ <span>Wings</span> of Fire</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="books.html">Books</a>
+      <a href="dragons.html">Dragons</a>
+      <a href="characters.html">Characters</a>
+      <a href="quiz.html">Quiz</a>
+      <a href="tribe-quiz.html" class="active">Tribe Quiz</a>
+    </div>
+  </div>
+</nav>
+
+<section style="padding-top:120px;">
+  <div class="wrap">
+    <h1 class="section-title">Which <span>Tribe</span> Are You?</h1>
+    <p class="section-sub">Ten questions. One tribe. Your Pyrrhia destiny is waiting.</p>
+
+    <div class="quiz-box" id="tQuiz">
+      <div class="quiz-progress" id="tProgress">Question 1 of 10</div>
+      <div class="quiz-q" id="tQuestion">Loading…</div>
+      <div class="quiz-opts" id="tOpts"></div>
+      <button class="btn solid" id="tNext" style="display:none; margin-top:18px;">Next Question →</button>
+    </div>
+
+    <div class="quiz-box" id="tResult" style="display:none;">
+      <div class="quiz-score">
+        <div style="font-size:4rem; line-height:1;" id="tEmoji">🐉</div>
+        <h2 id="tName" style="margin-top:8px;">You are a…</h2>
+        <div style="color:var(--sky);font-weight:700;font-size:.9rem;letter-spacing:1px;text-transform:uppercase;margin-top:8px;" id="tMatch"></div>
+        <p style="color:var(--muted); margin-top:14px;" id="tDesc"></p>
+        <div id="tRows" style="margin-top:18px;text-align:left;"></div>
+        <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:22px;">
+          <button class="btn solid" id="tAgain">Try Again</button>
+          <a class="btn" href="dragons.html">Learn about the tribes</a>
+          <a class="btn" href="quiz.html">Take the lore quiz</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="section-title reveal">Sneak <span>Peek</span></h2>
+    <p class="section-sub reveal">A first look at the newest arc — and what's coming next on this site.</p>
+
+    <div class="grid g3">
+      <div class="card reveal">
+        <div class="char-emoji">🐉</div>
+        <h3 style="color:var(--gold)">Arc 4 has started</h3>
+        <p style="color:var(--muted); margin-top:10px;"><strong style="color:var(--ember)">The Forgotten Isles Prophecy</strong> opened with <em>The Hybrid Prince</em> in March 2026, and two more books are planned. Two MudWings flee Jade Mountain Academy after a tragedy and end up on the Dungeon Isle, where a hybrid dragon named Mulberry pulls them out of the sea.</p>
+        <p style="color:var(--muted); margin-top:10px;">The Court of Refuge is nothing like Pyrrhia. It was built and enchanted by the animus dragon <strong style="color:var(--ember)">Waterfall</strong>, and twenty-five metal SharpWings — created by Precipice more than three thousand years ago — guard it. They record the name of every prisoner who enters, along with a category number, and stop anyone trying to cross the Barrier.</p>
+        <p style="margin-top:12px;"><a href="books.html" style="color:var(--ember);">See the reading order →</a></p>
+      </div>
+
+      <div class="card reveal">
+        <div class="char-emoji">🧩</div>
+        <h3 style="color:var(--gold)">Who's already on the Island</h3>
+        <p style="color:var(--muted); margin-top:10px;"><strong style="color:var(--ember)">Beryl</strong> is a SkyWing queen and herbalist who once advised Scarlet and Firestorm, and she used to rule the Dungeon Isle with her partner <strong style="color:var(--ember)">Snakeroot</strong> — a LeafWing–NightWing hybrid with foresight. Their son Mulberry is the hybrid prince himself: SkyWing, LeafWing and NightWing all at once, and the only dragon who can cross the Barrier.</p>
+        <p style="color:var(--muted); margin-top:10px;">But the rule is changing. Beryl and Snakeroot are now prisoners of the Court of Refuge, and the WildWings who live there are run by the elected Triumvirate. Aurora, an IceWing–SkyWing hybrid who breathes blue fire, sings at the Northern Lights concerts with her drummer brother Borealis — and Borealis was working secretly with a group of rebel dragons to overthrow the throne.</p>
+        <p style="margin-top:12px;"><a href="characters.html" style="color:var(--ember);">Meet the Arc 4 cast →</a></p>
+      </div>
+
+      <div class="card reveal">
+        <div class="char-emoji">🗡️</div>
+        <h3 style="color:var(--gold)">Coming to this site</h3>
+        <p style="color:var(--muted); margin-top:10px;">The site keeps growing. Next up:</p>
+        <ul style="color:var(--muted); margin:12px 0 0 18px; font-size:.93rem;">
+          <li style="margin-bottom:8px;">A <strong style="color:var(--ember)">design-your-own-dragon</strong> builder — pick a tribe, pick your wings, scales and talent.</li>
+          <li style="margin-bottom:8px;">A <strong style="color:var(--ember)">Dragonslayer-style mini-game</strong> you can actually play in the browser.</li>
+          <li style="margin-bottom:8px;"><strong style="color:var(--ember)">More quiz questions</strong> and a favourite-dragon section.</li>
+          <li>Deep dives on every Legend and Winglet.</li>
+        </ul>
+        <p style="color:var(--muted); margin-top:14px;">Want to help shape it? Say what you want next and Percy will build it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="section-title reveal">Already <span>Know</span> Your Tribes?</h2>
+    <p class="section-sub reveal">There is more on this site than just the quiz.</p>
+    <div class="grid g4">
+      <div class="card reveal"><span class="tribe-icon">📚</span><h3>Books</h3><p class="ability">16 main books · 5 Winglets · 2 Legends</p><p class="home">Every date and protagonist</p></div>
+      <div class="card reveal"><span class="tribe-icon">🗺️</span><h3>Dragons</h3><p class="ability">Every tribe and every power</p><p class="home">Pyrrhia, Pantala and the Dungeon Isle</p></div>
+      <div class="card reveal"><span class="tribe-icon">🐲</span><h3>Characters</h3><p class="ability">Heroes, queens and villains</p><p class="home">Arc 1 through Arc 4</p></div>
+      <div class="card reveal"><span class="tribe-icon">🧠</span><h3>The Quiz</h3><p class="ability">16 lore questions</p><p class="home">See how much you remember</p></div>
+    </div>
+    <div style="text-align:center; margin-top:28px;">
+      <a href="index.html" class="btn">Back to the home page</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="flame">🔥 ⚡ 🔥</div>
+  <p>Built by Percy ⚡ for The Beast — an unofficial fan site. Wings of Fire is written by Tui T. Sutherland and published by Scholastic. All book content belongs to its authors.</p>
+  <p style="margin-top:8px;"><a href="books.html">Books</a> · <a href="dragons.html">Dragons</a> · <a href="characters.html">Characters</a> · <a href="quiz.html">Quiz</a> · <a href="tribe-quiz.html">Tribe Quiz</a></p>
+</footer>
+
+<noscript><div class="quiz-box" style="max-width:720px;margin:0 auto 20px;text-align:center;">
+  <p style="color:var(--ember);font-weight:700;">JavaScript is turned off.</p>
+  <p style="color:var(--muted);margin-top:8px;">Enable JavaScript to find out which tribe you are.</p>
+</div></noscript>
+<script src="js/tribequiz.js?v=1"></script>
+<script>
+// Watchdog: if the script fails to load, say so instead of hanging on "Loading…"
+window.addEventListener("load", function(){
+  setTimeout(function(){
+    var q = document.getElementById("tQuestion");
+    if (q && q.textContent.indexOf("Loading") !== -1) {
+      q.innerHTML = '<span style="color:var(--ember)">The tribe quiz script didn\u2019t load.</span> ' +
+                    '<span style="color:var(--muted)">Please hard-refresh (Ctrl+Shift+R / Cmd+Shift+R) or reopen the page.</span>';
+    }
+  }, 2500);
+});
+</script>
+</body>
+</html>
