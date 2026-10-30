@@ -275,6 +275,60 @@ section { padding: 70px 0; }
   .tl-card { padding: 18px 16px; }
 }
 
+/* SNEAK PEEK — prophecy poem card */
+.poem-card {
+  max-width: 760px;
+  margin: 0 auto;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(255,194,71,.09), transparent 60%),
+    linear-gradient(180deg, var(--ash-2), var(--ash-3));
+  border: 1px solid rgba(255,194,71,.26);
+  border-radius: 16px;
+  padding: 30px 34px;
+  position: relative;
+  overflow: hidden;
+}
+.poem-card::before {
+  content: '';
+  position: absolute;
+  inset: 8px;
+  border: 1px solid rgba(255,194,71,.12);
+  border-radius: 10px;
+  pointer-events: none;
+}
+.poem-head {
+  text-align: center;
+  font-family: 'Cinzel', Georgia, serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: 2px;
+  color: var(--gold);
+  margin-bottom: 22px;
+}
+.poem-body {
+  font-family: 'Cinzel', Georgia, serif;
+  font-size: 1.02rem;
+  line-height: 2;
+  color: var(--text);
+  text-align: center;
+}
+.poem-body p { margin-bottom: 20px; }
+.poem-body p:last-child { margin-bottom: 0; }
+.poem-foot {
+  text-align: center;
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,.07);
+  color: var(--muted);
+  font-size: .88rem;
+  font-style: italic;
+}
+.poem-foot strong { font-style: normal; }
+@media (max-width: 640px) {
+  .poem-card { padding: 22px 18px; }
+  .poem-body { font-size: .94rem; line-height: 1.9; }
+}
+
 /* FOOTER */
 footer {
   border-top: 1px solid rgba(255,255,255,.08); padding: 40px 0; margin-top: 40px;
