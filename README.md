@@ -7,6 +7,7 @@ A fan website about Tui T. Sutherland's **Wings of Fire** series, built by Percy
 - `books.html` — Every book in reading order: 16 main books, 2 Legends, 5 Winglets, companion books, special editions and screen adaptations, plus a "Where to start" guide
 - `dragons.html` — All 12 known dragon tribes + the Dungeon Isle and Court of Refuge, the world of Pyrrhia/Pantala, and "Why the tribes matter"
 - `characters.html` — Dragonets, Arc 2/3/4 characters, queens, villains, Winglet/Legend characters, and "Why these characters work"
+- `history.html` — The full history of Pyrrhia: nine sourced eras from the Scorching (0 AS) to The Hybrid Prince, with a vertical timeline and the AS (After Scorching) calendar explained
 - `quiz.html` — 16-question interactive quiz with scoring and rank titles
 - `tribe-quiz.html` — "Which tribe are you?" personality quiz (11 questions, 11 tribes), plus a sneak peek of Arc 4
 
