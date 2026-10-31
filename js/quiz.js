@@ -47,14 +47,17 @@ const QUIZ = [
    e:"Umber is Clay's younger brother — a MudWing who has spent his whole life in his famous sibling's shadow, and isn't sure he is a hero at all."},
   {q:"How many metal SharpWings guard the Court of Refuge?",
    a:["Twenty-five","Five","One hundred","Twelve"], c:0,
-   e:"Twenty-five SharpWings, enchanted by the SkyWing animus Precipice, guard the Dungeon Isle and record the name of every prisoner who enters."}
+   e:"Twenty-five SharpWings, enchanted by the SkyWing animus Precipice, guard the Dungeon Isle and record the name of every prisoner who enters."},
+  {q:"Which dragon is the star of book seventeen?",
+   a:["Kinkajou","Harmony","Umber","Moonwatcher"], c:0,
+   e:"Kinkajou! The bouncy, snarky RainWing from the first two arcs gets her own main-series book — announced by Tui Sutherland at FanWing Fest 2026. No title or release date yet."}
 ];
 
 const RANKS = [
-  [16,"Legend of the Sky","Perfect score. You know Pyrrhia better than most dragons living there. Tui Sutherland would be impressed. (And slightly worried.)"],
-  [13,"True Dragonet","Excellent! You clearly read every book — or read the wiki very thoroughly. Either way, respect."],
-  [9,"Jade Mountain Student","Solid. You know your tribes and your dragons. A few more books and you'll be unstoppable."],
-  [5,"Curious Hatchling","Not bad for a beginner! Read a couple more and come back — the quiz will wait."],
+  [17,"Legend of the Sky","Perfect score. You know Pyrrhia better than most dragons living there. Tui Sutherland would be impressed. (And slightly worried.)"],
+  [14,"True Dragonet","Excellent! You clearly read every book — or read the wiki very thoroughly. Either way, respect."],
+  [10,"Jade Mountain Student","Solid. You know your tribes and your dragons. A few more books and you'll be unstoppable."],
+  [6,"Curious Hatchling","Not bad for a beginner! Read a couple more and come back — the quiz will wait."],
   [0,"Combe Hatchling","The prophecy says five dragonets will be born to end the fight. You're not one of them yet. Go read Arc 1!"]
 ];
 
