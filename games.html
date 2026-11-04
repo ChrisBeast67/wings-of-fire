@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Games — Wings of Fire</title>
+<meta name="description" content="Play Wings of Fire mini-games: Dragon Flight, a canvas flying game, and Tribe Match, a memory matching game with all ten tribes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=3">
+<link rel="stylesheet" href="css/games.css?v=1">
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <div class="logo">⚡ <span>Wings</span> of Fire</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="books.html">Books</a>
+      <a href="dragons.html">Dragons</a>
+      <a href="characters.html">Characters</a>
+      <a href="history.html">History</a>
+      <a href="sneak-peek.html">Sneak Peek</a>
+      <a href="quiz.html">Quiz</a>
+      <a href="tribe-quiz.html">Tribe Quiz</a>
+      <a href="games.html" class="active">Games</a>
+    </div>
+  </div>
+</nav>
+
+<section style="padding-top:120px;">
+  <div class="wrap">
+    <h1 class="section-title">The <span>Games</span></h1>
+    <p class="section-sub">Two playable mini-games from Pyrrhia. No downloads, no installs — just tap and go.</p>
+
+    <!-- ============ GAME 1: DRAGON FLIGHT ============ -->
+    <div class="game-block" id="dragon-flight">
+      <div class="game-head">
+        <div>
+          <h2>🐉 Dragon Flight</h2>
+          <p class="game-tagline">Fly a dragonet through the jungle pillars. Every gap you pass is a point. Don't hit anything.</p>
+        </div>
+        <div class="game-stats">
+          <div class="stat"><span class="stat-label">Score</span><span class="stat-value" id="gameScore">0</span></div>
+          <div class="stat"><span class="stat-label">Best</span><span class="stat-value" id="gameBest">0</span></div>
+        </div>
+      </div>
+
+      <div class="game-stage">
+        <canvas id="gameCanvas" width="800" height="420" aria-label="Dragon Flight game canvas"></canvas>
+        <div class="game-overlay" id="gameMsg">Press start, or hit Space, to take flight.</div>
+      </div>
+
+      <div class="game-controls">
+        <button class="btn solid" id="gameBtn">▶ Start Flying</button>
+        <span class="game-hint">🎮 Space / ↑ / click / tap to flap</span>
+      </div>
+      <p class="sr-only" id="gameLive" aria-live="polite"></p>
+
+      <div class="grid g3 game-cards">
+        <div class="card">
+          <h3 style="color:var(--gold)">🕹️ How to play</h3>
+          <p style="color:var(--muted); margin-top:10px;">Tap, click or press <strong style="color:var(--ember)">Space</strong> to flap upward. Let go and you drop. Thread the gaps between the stone pillars — each pillar you clear scores a point, and the gaps get tighter as you go.</p>
+        </div>
+        <div class="card">
+          <h3 style="color:var(--gold)">🏆 Your record</h3>
+          <p style="color:var(--muted); margin-top:10px;">Your best flight is saved in this browser, so it stays with you between visits. Beat it, then beat it again.</p>
+        </div>
+        <div class="card">
+          <h3 style="color:var(--gold)">🔥 Speed run</h3>
+          <p style="color:var(--muted); margin-top:10px;">The pillars come faster the longer you survive. Ten points is a good flight. Twenty is a legend. Everything past thirty is Clay-level heroics.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ GAME 2: TRIBE MATCH ============ -->
+    <div class="game-block" id="tribe-match">
+      <div class="game-head">
+        <div>
+          <h2>🧩 Tribe Match</h2>
+          <p class="game-tagline">Memory game. Flip two cards and match the dragonets to their tribes — all ten, from SeaWing to WildWing.</p>
+        </div>
+        <div class="game-stats">
+          <div class="stat"><span class="stat-label">Moves</span><span class="stat-value" id="memMoves">0</span></div>
+          <div class="stat"><span class="stat-label">Pairs</span><span class="stat-value" id="memPairs">0</span></div>
+          <div class="stat"><span class="stat-label">Best</span><span class="stat-value" id="memBest">—</span></div>
+        </div>
+      </div>
+
+      <div class="mem-board" id="memBoard"></div>
+
+      <div class="game-controls">
+        <button class="btn solid" id="memBtn">🔄 New Game</button>
+        <span class="game-hint" id="memMsg">Find all ten tribe pairs. Fewest moves wins.</span>
+      </div>
+      <p class="sr-only" id="memLive" aria-live="polite"></p>
+
+      <div class="grid g2 game-cards">
+        <div class="card">
+          <h3 style="color:var(--gold)">🧠 How to play</h3>
+          <p style="color:var(--muted); margin-top:10px;">Click a card to flip it and reveal the dragonet. Find its partner — the same tribe — to lock the pair in. Clear the whole board in as few moves as you can.</p>
+        </div>
+        <div class="card">
+          <h3 style="color:var(--gold)">🐾 The ten tribes</h3>
+          <p style="color:var(--muted); margin-top:10px;">SeaWing, MudWing, SandWing, SkyWing, NightWing, IceWing, RainWing, SilkWing, HiveWing and WildWing. Still not sure about the differences? The <a href="tribe-quiz.html" style="color:var(--ember);">tribe quiz</a> will tell you which one you are.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="section-title reveal">More <span>Things</span> To Do</h2>
+    <p class="section-sub reveal">The rest of the site is waiting.</p>
+    <div class="grid g4">
+      <div class="card reveal"><span class="tribe-icon">📚</span><h3>Books</h3><p class="ability">16 main books · 5 Winglets · 2 Legends</p><p class="home">Full reading order</p></div>
+      <div class="card reveal"><span class="tribe-icon">🧠</span><h3>Lore Quiz</h3><p class="ability">16 questions</p><p class="home">Test what you remember</p></div>
+      <div class="card reveal"><span class="tribe-icon">🔮</span><h3>Tribe Quiz</h3><p class="ability">11 questions</p><p class="home">Find your tribe</p></div>
+      <div class="card reveal"><span class="tribe-icon">🗺️</span><h3>Dragons</h3><p class="ability">Every tribe and power</p><p class="home">Pyrrhia and Pantala</p></div>
+    </div>
+    <div style="text-align:center; margin-top:28px;">
+      <a href="index.html" class="btn">Back to the home page</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="flame">🔥 ⚡ 🔥</div>
+  <p>Built by Percy ⚡ for The Beast — an unofficial fan site. Wings of Fire is written by Tui T. Sutherland and published by Scholastic. All book content belongs to its authors.</p>
+  <p style="margin-top:8px;"><a href="books.html">Books</a> · <a href="dragons.html">Dragons</a> · <a href="characters.html">Characters</a> · <a href="history.html">History</a> · <a href="sneak-peek.html">Sneak Peek</a> · <a href="quiz.html">Quiz</a> · <a href="tribe-quiz.html">Tribe Quiz</a> · <a href="games.html">Games</a></p>
+</footer>
+
+<script src="js/games.js?v=1"></script>
+<script src="js/memory.js?v=1"></script>
+</body>
+</html>
