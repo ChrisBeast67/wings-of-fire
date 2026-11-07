@@ -4,34 +4,96 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About Me — Wings of Fire</title>
-<meta name="description" content="About the maker of this Wings of Fire fan site.">
+<meta name="description" content="About Christopher Ding Wang, the maker of this Wings of Fire fan site — plus his other websites and the official series sites.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css?v=2">
 <style>
-  html, body { height: 100%; }
-  body { overflow: hidden; }
-  .doc-holder {
-    position: fixed;
-    inset: 0;
-    z-index: 5;
-    background: var(--ash);
+  .about-lead {
+    font-size: clamp(1.15rem, 2.4vw, 1.45rem);
+    color: var(--text);
+    max-width: 760px;
+    margin: 0 auto;
   }
-  .doc-frame {
-    width: 100%;
-    height: 100%;
-    border: 0;
-    display: block;
+  .about-text {
+    max-width: 760px;
+    margin: 0 auto;
+    color: var(--muted);
   }
+  .about-text p { margin-bottom: 16px; }
+  .about-text strong { color: var(--text); }
+  .link-list { list-style: none; padding: 0; margin: 6px 0 0; }
+  .link-list li { margin-bottom: 10px; }
+  .link-list a {
+    color: var(--ember);
+    font-weight: 700;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255,107,26,.35);
+  }
+  .link-list a:hover { color: var(--gold); border-bottom-color: var(--gold); }
+  .doc-line { font-size: .9rem; color: var(--muted); }
+  .doc-line a { color: var(--sky); text-decoration: none; }
+  .doc-line a:hover { text-decoration: underline; }
 </style>
 </head>
 <body>
-<div class="doc-holder">
-  <iframe class="doc-frame"
-          title="About Me — Google Doc"
-          src="https://docs.google.com/document/d/1Y7-otk8j-3ci44gQGGwISg8UE54IkHOtkEhSWCTe3_o/preview"
-          allowfullscreen></iframe>
-</div>
+<nav>
+  <div class="nav-inner">
+    <div class="logo">⚡ <span>Wings</span> of Fire</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="books.html">Books</a>
+      <a href="dragons.html">Dragons</a>
+      <a href="characters.html">Characters</a>
+      <a href="history.html">History</a>
+      <a href="sneak-peek.html">Sneak Peek</a>
+      <a href="quiz.html">Quiz</a>
+      <a href="tribe-quiz.html">Tribe Quiz</a>
+      <a href="games.html">Games</a>
+      <a href="about-me.html" class="active">About Me</a>
+    </div>
+  </div>
+</nav>
+
+<section style="padding-top:120px;">
+  <div class="wrap">
+    <h1 class="section-title">About <span>Me</span></h1>
+    <p class="section-sub">The one who made this site (with a little help from my A.I. Percy ⚡).</p>
+
+    <div class="card" style="max-width:840px;margin:26px auto 0;">
+      <p class="about-lead">My name is <strong>Christopher Ding Wang</strong> and I made some websites with my A.I. Percy.</p>
+      <div class="about-text" style="margin-top:18px;">
+        <p>I made this website about <strong>Wings of Fire</strong> because I just finished the 16th book and felt like doing a lot of research. I wanted to review some of the books I hadn't read since third grade (which is most of the third-arc books), so I thought it's kind of boring not being able to talk about books with actual humans — so I hoped that this site could help people find Wings of Fire, a good series.</p>
+        <p>You could find the Wings of Fire books in this library — you can ask <strong>Ms. Molly</strong> for where they are.</p>
+        <p>I also like the <strong>Warriors</strong> and <strong>Percy Jackson</strong> series, and here are the websites I made for them:</p>
+      </div>
+      <ul class="link-list" style="margin-top:6px;">
+        <li>🐾 <a href="https://chrisbeast67.github.io/warriors/" target="_blank" rel="noopener">chrisbeast67.github.io/warriors/</a></li>
+        <li>⚡ <a href="https://chrisbeast67.github.io/percy-jackson/" target="_blank" rel="noopener">chrisbeast67.github.io/percy-jackson/</a></li>
+      </ul>
+    </div>
+
+    <div class="card" style="max-width:840px;margin:22px auto 0;">
+      <h3 style="font-size:1.4rem;margin-bottom:8px;">The official sites</h3>
+      <p class="muted" style="margin-bottom:6px;">These are <strong>not</strong> made by me — they're the real ones:</p>
+      <ul class="link-list">
+        <li>🐾 <a href="https://warriorcats.com/" target="_blank" rel="noopener">warriorcats.com</a></li>
+        <li>⚡ <a href="https://rickriordan.com/" target="_blank" rel="noopener">rickriordan.com</a></li>
+      </ul>
+    </div>
+
+    <p class="doc-line" style="text-align:center;margin-top:22px;">
+      My original about-me document:
+      <a href="https://docs.google.com/document/d/1Y7-otk8j-3ci44gQGGwISg8UE54IkHOtkEhSWCTe3_o/edit?usp=sharing" target="_blank" rel="noopener">open it in Google Docs ↗</a>
+    </p>
+  </div>
+</section>
+
+<footer>
+  <div class="flame">🔥 ⚡ 🔥</div>
+  <p>Built by Percy ⚡ for The Beast — an unofficial fan site. Wings of Fire is written by Tui T. Sutherland and published by Scholastic.</p>
+</footer>
+
 </body>
 </html>

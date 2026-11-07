@@ -11,7 +11,7 @@ A fan website about Tui T. Sutherland's **Wings of Fire** series, built by Percy
 - `sneak-peek.html` — A spoiler-light look at what's next: the Forgotten Isles Prophecy in full, the new Arc 4 dragons, every book and adaptation still to come, and the carved warning from the back of *The Hybrid Prince*
 - `quiz.html` — 16-question interactive quiz with scoring and rank titles
 - `tribe-quiz.html` — "Which tribe are you?" personality quiz (11 questions, 11 tribes), plus a sneak peek of Arc 4
-- `about-me.html` — The maker's own about-me page, with the Google Doc embedded inline plus a direct link and an "Open the document" button
+- `about-me.html` — Christopher Ding Wang's about-me page: why the Wings of Fire site exists, the library tip (ask Ms. Molly), links to the Warriors and Percy Jackson sites, and the official series sites
 
 ## Tech
 Pure static HTML / CSS / vanilla JS. No build step, no dependencies. Open `index.html` in a browser and it works.
